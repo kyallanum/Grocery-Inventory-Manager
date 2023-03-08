@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:Grocery_Inventory_Manager.ViewModels"
+             x:DataType="viewmodel:AboutPageViewModel"
+             x:Class="Grocery_Inventory_Manager.AboutPage"
+             Title="About">
+
+    <ContentPage.BindingContext>
+        <viewmodel:AboutPageViewModel />
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout
+        Padding="0,0,0,10">
+
+        <Label 
+            Text="About"
+            FontSize="40"
+            Padding="0, 50, 0, 40"
+            VerticalTextAlignment="Center"
+            HorizontalTextAlignment="Center"/>
+
+        <Label
+            Text="Copyright © 2023 Kyal Lanum&#x0a;All rights reserved."
+            FontSize="14"
+            VerticalOptions="Center"
+            VerticalTextAlignment="Center"
+            HorizontalTextAlignment="Center"/>
+        <Label
+            Text="Privacy Policy"
+            FontAttributes="Italic"
+            FontSize="14"
+            VerticalTextAlignment="Center"
+            HorizontalTextAlignment="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding getPrivacy}"
+                                      CommandParameter="https://policies.google.com/privacy"/>
+            </Label.GestureRecognizers>
+        </Label>
+
+
+    </VerticalStackLayout>
+</ContentPage>

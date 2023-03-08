@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:drawables="clr-namespace:Grocery_Inventory_Manager.Drawables"
+             xmlns:viewmodels="clr-namespace:Grocery_Inventory_Manager.ViewModels" 
+             x:DataType="viewmodels:ProfileViewModel"
+             x:Class="Grocery_Inventory_Manager.Profile"
+             Title="Profile">
+
+    <ContentPage.BindingContext>
+        <viewmodels:ProfileViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <drawables:ProfileImage x:Key="ProfileImage" />
+    </ContentPage.Resources>
+
+    <VerticalStackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="125" />
+                <RowDefinition Height="125" />
+            </Grid.RowDefinitions>
+
+            <BoxView Color="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Primary}}"
+                     HorizontalOptions="CenterAndExpand"
+                     ZIndex="0"/>
+
+            <Ellipse Fill="{AppThemeBinding Light={StaticResource SecondaryBrush}, Dark={StaticResource SecondaryBrush}}"
+                 Stroke="{AppThemeBinding Light={StaticResource Gray200Brush}, Dark={StaticResource Gray200Brush}}" 
+                 ZIndex="1"
+                 Grid.Row="1"
+                 Margin="0,-62.5,0,62.5"
+                 WidthRequest="125"
+                 StrokeThickness="5" />
+
+            <GraphicsView Drawable="{StaticResource ProfileImage}" 
+                          ZIndex="2"/>
+
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>
