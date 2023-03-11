@@ -1,1 +1,0 @@
-C:\Users\Kyal\source\repos\Grocery Inventory Manager\Grocery Inventory Manager\Grocery Inventory Manager.csproj;x64
